@@ -24,9 +24,9 @@ freely, subject to the following restrictions:
 package sort
 
 func CS8U(data []uint8) {
-	counts := [256]uint8
+	counts := [256]int{}
 	for _, v := range data {
-		counts[v]++
+		counts[int(v)]++
 	}
 	n := 0
 	for v, i := range counts {
@@ -39,9 +39,9 @@ func CS8U(data []uint8) {
 }
 
 func CS8S(data []int8) {
-	counts := [256]int8
+	counts := [256]int{}
 	for _, v := range data {
-		counts[v]++
+		counts[int(uint8(v))]++
 	}
 	n := 0
 	for v, i := range counts {
@@ -54,9 +54,9 @@ func CS8S(data []int8) {
 }
 
 func CS16U(data []uint16) {
-	counts := [256]uint16
+	counts := [65536]int{}
 	for _, v := range data {
-		counts[v]++
+		counts[int(v)]++
 	}
 	n := 0
 	for v, i := range counts {
@@ -70,9 +70,9 @@ func CS16U(data []uint16) {
 }
 
 func CS16S(data []int16) {
-	counts := [256]int16
+	counts := [65536]int{}
 	for _, v := range data {
-		counts[v]++
+		counts[int(uint16(v))]++
 	}
 	n := 0
 	for v, i := range counts {
